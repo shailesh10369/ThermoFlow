@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThermoFlow | Modern Temperature Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="app-title">
+                    <h1><i class="fas fa-temperature-high"></i> ThermoFlow</h1>
+                    <p class="subtitle">Smart temperature conversion made simple</p>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-sun"></i> Light Mode
+                </button>
+            </div>
+        </header>
+        
+        <section class="converter-section">
+            <div class="input-group">
+                <label for="temperature"><i class="fas fa-thermometer-half"></i> Enter Temperature</label>
+                <input type="number" id="temperature" placeholder="Enter temperature value" step="any">
+            </div>
+            
+            <div class="conversion-controls">
+                <div class="input-column">
+                    <label for="from-unit"><i class="fas fa-arrow-right"></i> From Unit</label>
+                    <select id="from-unit">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+                
+                <div class="swap-column">
+                    <button class="swap-btn" id="swap-btn" title="Swap units">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
+                
+                <div class="input-column">
+                    <label for="to-unit"><i class="fas fa-arrow-left"></i> To Unit</label>
+                    <select id="to-unit">
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="convert-btn" id="convert-btn">
+                <i class="fas fa-sync-alt"></i> Convert Temperature
+            </button>
+            
+            <div class="results" id="results">
+                <div class="result-item">
+                    <span class="result-label">Conversion Result:</span>
+                    <span class="result-value empty-result" id="conversion-result">00.00 °F</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Formula Used:</span>
+                    <span class="result-value empty-result" id="formula-used">Enter temperature to see formula</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>ThermoFlow &copy; 2025 | All Rights Reserved | Smart Temperature Conversion</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle" id="toast-icon"></i>
+        <span id="toast-message">Temperature converted successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
